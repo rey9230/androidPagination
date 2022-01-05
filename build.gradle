@@ -4,6 +4,7 @@ buildscript {
 
     ext.retrofitVersion = '2.9.0'
     ext.okhttpLoggingVersion = '4.7.2'
+    ext.pagingVersion = '3.0.0'
 
     repositories {
         google()

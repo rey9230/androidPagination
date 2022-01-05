@@ -8,7 +8,7 @@ import retrofit2.http.Query
 interface ApiInterface {
 
     @GET("/v1/passenger")
-    fun getPassengers(@Query("page") page : String, @Query("size") size : String) : Call<PassengersResponse>
+    suspend fun getPassengers(@Query("page") page : String, @Query("size") size : String) : PassengersResponse
 
 }
 
