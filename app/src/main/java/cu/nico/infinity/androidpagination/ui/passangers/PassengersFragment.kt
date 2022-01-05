@@ -11,6 +11,7 @@ import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import cu.nico.infinity.androidpagination.R
 import cu.nico.infinity.androidpagination.data.adapters.PassengersAdapter
+import cu.nico.infinity.androidpagination.data.adapters.PassengersLoadStateAdapter
 import kotlinx.android.synthetic.main.fragment_passenger.view.*
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
@@ -61,7 +62,10 @@ class PassengersFragment : Fragment() {
         passengersViewModel = ViewModelProvider(this)[PassengersViewModel::class.java]
         layoutManager = LinearLayoutManager(requireContext())
         v.passengerRv.layoutManager = layoutManager
-        v.passengerRv.adapter = adapter
+        v.passengerRv.adapter = adapter.withLoadStateHeaderAndFooter(
+            header = PassengersLoadStateAdapter{adapter.retry()},
+            footer = PassengersLoadStateAdapter{adapter.retry()}
+        )
 
     }
 

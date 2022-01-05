@@ -4,7 +4,11 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.core.view.isVisible
+import androidx.paging.LoadState
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,9 +19,9 @@ import cu.nico.infinity.androidpagination.data.models.PassengersDetails
 class PassengersAdapter(private val context: Context): PagingDataAdapter<PassengersDetails, PassengersAdapter.PassengerViewHolder>(REPO_COMPARATOR){
 
     inner class PassengerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val nameTv = itemView.findViewById<TextView>(R.id.nameTv)
-        val tripsTv = itemView.findViewById<TextView>(R.id.tripsTv)
-        val airlinesRv = itemView.findViewById<RecyclerView>(R.id.airlinesRv)
+        val nameTv: TextView = itemView.findViewById(R.id.nameTv)
+        val tripsTv: TextView = itemView.findViewById(R.id.tripsTv)
+        val airlinesRv: RecyclerView = itemView.findViewById(R.id.airlinesRv)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PassengerViewHolder {

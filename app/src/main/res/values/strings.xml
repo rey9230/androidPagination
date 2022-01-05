@@ -3,4 +3,5 @@
     <string name="web_service_endpoint">https://api.instantwebtools.net</string>
     <string name="trips">Trips:</string>
     <string name="unavailable">Unavailable</string>
+    <string name="retry">Retry</string>
 </resources>
